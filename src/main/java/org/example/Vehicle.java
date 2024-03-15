@@ -10,23 +10,20 @@ public class Vehicle {
 
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Vehicle vehicle = (Vehicle) o;
-        return yearOfManufacture == vehicle.yearOfManufacture && Objects.equals(manufacturer, vehicle.manufacturer) && Objects.equals(model, vehicle.model);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(manufacturer, model, yearOfManufacture);
-    }
 
     public Vehicle(String manufacturer, String model, int yearOfManufacture) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.yearOfManufacture = yearOfManufacture;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "Manufacturer='" + manufacturer + '\'' +
+                ", Model='" + model + '\'' +
+                ", YearOfManufacture=" + yearOfManufacture +
+                '}';
     }
 
     public String getManufacturer() {
@@ -53,14 +50,17 @@ public class Vehicle {
         this.yearOfManufacture = yearOfManufacture;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return yearOfManufacture == vehicle.yearOfManufacture && Objects.equals(manufacturer, vehicle.manufacturer) && Objects.equals(model, vehicle.model);
+    }
 
     @Override
-    public String toString() {
-        return "Vehicle{" +
-                "Manufacturer='" + manufacturer + '\'' +
-                ", Model='" + model + '\'' +
-                ", YearOfManufacture=" + yearOfManufacture +
-                '}';
+    public int hashCode() {
+        return Objects.hash(manufacturer, model, yearOfManufacture);
     }
 
 

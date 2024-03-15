@@ -5,6 +5,20 @@ import java.util.Objects;
 public class Car extends Vehicle {
     private int numberOfDoors;
 
+    public Car(String manufacturer, String model, int yearOfManufacture , int numberOfDoors){
+        super(manufacturer,model,yearOfManufacture);
+        this.numberOfDoors = numberOfDoors;
+    }
+    @Override
+    public String toString() {
+        return "Car{" +
+                "Manufacturer='" + getManufacturer() + '\'' +
+                ", Model='" + getModel() + '\'' +
+                ", YearOfManufacture=" + getManufacturer() + '\'' +
+                ", NumberOfDoors=" + numberOfDoors + '\'' +
+                '}';
+    }
+
     public int getNumberOfDoors() {
         return numberOfDoors;
     }
@@ -12,7 +26,6 @@ public class Car extends Vehicle {
     public void setNumberOfDoors(int numberOfDoors) {
         this.numberOfDoors = numberOfDoors;
     }
-
 
 
     @Override
@@ -27,21 +40,6 @@ public class Car extends Vehicle {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), numberOfDoors);
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "Manufacturer='" + getManufacturer() + '\'' +
-                ", Model='" + getModel() + '\'' +
-                ", YearOfManufacture=" + getManufacturer() + '\'' +
-                ", NumberOfDoors=" + numberOfDoors + '\'' +
-                '}';
-    }
-
-    public Car(String manufacturer, String model, int yearOfManufacture , int numberOfDoors){
-        super(manufacturer,model,yearOfManufacture);
-        this.numberOfDoors = numberOfDoors;
     }
 
 
