@@ -5,18 +5,16 @@ import java.util.Objects;
 public class Car extends Vehicle {
     private int numberOfDoors;
 
+    @Override
+    public String toString() {
+        return super.toString() +
+                "numberOfDoors=" + numberOfDoors +
+                '}';
+    }
+
     public Car(String manufacturer, String model, int yearOfManufacture , int numberOfDoors){
         super(manufacturer,model,yearOfManufacture);
         this.numberOfDoors = numberOfDoors;
-    }
-    @Override
-    public String toString() {
-        return "Car{" +
-                "Manufacturer='" + getManufacturer() + '\'' +
-                ", Model='" + getModel() + '\'' +
-                ", YearOfManufacture=" + getManufacturer() + '\'' +
-                ", NumberOfDoors=" + numberOfDoors + '\'' +
-                '}';
     }
 
     public int getNumberOfDoors() {

@@ -22,8 +22,7 @@ public class Vehicle {
         return "Vehicle{" +
                 "Manufacturer='" + manufacturer + '\'' +
                 ", Model='" + model + '\'' +
-                ", YearOfManufacture=" + yearOfManufacture +
-                '}';
+                ", YearOfManufacture=" + yearOfManufacture + " ";
     }
 
     public String getManufacturer() {
